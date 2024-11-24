@@ -4,6 +4,7 @@ import { HomeNewArrivalsComponent } from './modules/home-new-arrivals/home-new-a
 import { HomeRecommendationComponent } from './modules/home-recommendation/home-recommendation.component';
 import { HomeTestimonialsComponent } from './modules/home-testimonials/home-testimonials.component';
 import { FooterComponent } from "../../modules/footer/footer.component";
+import { NavbarComponent } from "../../modules/navbar/navbar.component";
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { FooterComponent } from "../../modules/footer/footer.component";
     HomeNewArrivalsComponent,
     HomeTestimonialsComponent,
     HomeRecommendationComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarComponent,
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
