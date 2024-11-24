@@ -1,9 +1,18 @@
 import { Component } from '@angular/core';
+import { HomeHeaderComponent } from './modules/home-header/home-header.component';
+import { HomeNewArrivalsComponent } from './modules/home-new-arrivals/home-new-arrivals.component';
+import { HomeRecommendationComponent } from './modules/home-recommendation/home-recommendation.component';
+import { HomeTestimonialsComponent } from './modules/home-testimonials/home-testimonials.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [
+    HomeHeaderComponent,
+    HomeNewArrivalsComponent,
+    HomeTestimonialsComponent,
+    HomeRecommendationComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
