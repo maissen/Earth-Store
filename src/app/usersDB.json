@@ -1,4 +1,22 @@
 {
+  "users": [
+    {
+      "name": "maissen",
+      "email": "maissen@example.com",
+      "password": "maissenmaissen",
+      "confirmPassword": "maissenmaissen",
+      "usertype": "regular",
+      "id": 1
+    },
+    {
+      "name": "maissen",
+      "email": "maissen@gamil.com",
+      "password": "maissenmaissen",
+      "confirmPassword": "maissenmaissen",
+      "usertype": "admin",
+      "id": 2
+    }
+  ],
   "posts": [
     {
       "id": 1,
