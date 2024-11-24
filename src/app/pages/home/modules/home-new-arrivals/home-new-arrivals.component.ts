@@ -12,5 +12,5 @@ import { ProductsGridContainerComponent } from '../../../../modules/products-gri
   styleUrl: './home-new-arrivals.component.scss'
 })
 export class HomeNewArrivalsComponent {
-
+  
 }
