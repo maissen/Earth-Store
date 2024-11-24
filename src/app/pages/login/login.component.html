@@ -1,10 +1,26 @@
 <div class="container">
-    <form action="">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Enter password">
-
-        <!-- <app-btn-filled [text]="'log in'"></app-btn-filled> -->
-         <button>login</button>
-        <a routerLink="/register">You're a new user ?</a>
+    <form (ngSubmit)="onLogin()">
+      <input 
+        type="text" 
+        name="email" 
+        [(ngModel)]="email" 
+        placeholder="Enter your email" 
+        required 
+      />
+      <input 
+        type="password" 
+        name="password" 
+        [(ngModel)]="password" 
+        placeholder="Enter password" 
+        required 
+      />
+      
+      <button type="submit">Login</button>
+      <a routerLink="/register">You're a new user?</a>
+  
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
     </form>
-</div>
+  </div>
+  

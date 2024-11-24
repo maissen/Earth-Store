@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from './models/user.interface'; // Adjust the path if necessary
+import { User } from '../../models/user.interface'; // Adjust the path if necessary
 import { RegisterService } from 'src/app/services/register.service'; // Adjust the path if necessary
 
 @Component({
