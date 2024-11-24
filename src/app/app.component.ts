@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent } from "./modules/footer/footer.component";
 import { NavbarComponent } from './modules/navbar/navbar.component';
 import { ShopComponent } from "./pages/shop/shop.component";
+import { RegisterComponent } from './pages/register/register.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { ShopComponent } from "./pages/shop/shop.component";
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    ShopComponent
+    ShopComponent,
+    RegisterComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
