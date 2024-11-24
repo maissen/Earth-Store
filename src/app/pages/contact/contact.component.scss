@@ -1,0 +1,29 @@
+.header {
+    height: 60rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("../../assets/img/home/Contact-Banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    h1.title {
+        font-size: 7rem;
+        letter-spacing: .6rem;
+        color: var(--dark-green);
+        text-transform: uppercase;
+    }
+}
+
+.container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    .form {
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+}
