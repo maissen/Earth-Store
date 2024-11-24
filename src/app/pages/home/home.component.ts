@@ -3,6 +3,7 @@ import { HomeHeaderComponent } from './modules/home-header/home-header.component
 import { HomeNewArrivalsComponent } from './modules/home-new-arrivals/home-new-arrivals.component';
 import { HomeRecommendationComponent } from './modules/home-recommendation/home-recommendation.component';
 import { HomeTestimonialsComponent } from './modules/home-testimonials/home-testimonials.component';
+import { FooterComponent } from "../../modules/footer/footer.component";
 
 @Component({
   selector: 'app-home',
@@ -11,8 +12,9 @@ import { HomeTestimonialsComponent } from './modules/home-testimonials/home-test
     HomeHeaderComponent,
     HomeNewArrivalsComponent,
     HomeTestimonialsComponent,
-    HomeRecommendationComponent
-  ],
+    HomeRecommendationComponent,
+    FooterComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
