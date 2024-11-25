@@ -2,43 +2,63 @@
   "users": [
     {
       "name": "maissen",
-      "email": "maissen@example.com",
-      "password": "maissenmaissen",
-      "confirmPassword": "maissenmaissen",
-      "usertype": "regular",
-      "id": 1
-    },
-    {
-      "name": "maissen",
       "email": "maissen@gmail.com",
       "password": "maissenmaissen",
       "confirmPassword": "maissenmaissen",
       "usertype": "admin",
-      "id": 2
+      "id": 1,
+      "shoppingList": {
+        "products": [
+          {
+            "category": "postcard",
+            "name": "postcard 1",
+            "price": 10.99,
+            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+            "quantity": 1
+          },
+          {
+            "category": "postcard",
+            "name": "postcard 12",
+            "price": 65.99,
+            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+            "quantity": 1
+          },
+          {
+            "category": "postcard",
+            "name": "postcard 11",
+            "price": 60.4,
+            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+            "quantity": 1
+          },
+          {
+            "category": "postcard",
+            "name": "postcard 13",
+            "price": 70.25,
+            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+            "quantity": 1
+          },
+          {
+            "category": "postcard",
+            "name": "postcard 14",
+            "price": 75.8,
+            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+            "quantity": 1
+          }
+        ],
+        "totalPrice": 283.43
+      }
     },
     {
       "name": "eya",
-      "email": "eya@gmail.com",
-      "password": "maissenmaissen",
-      "confirmPassword": "maissenmaissen",
-      "usertype": "admin",
-      "id": 3
-    },
-    {
-      "name": "toutou",
-      "email": "toutou@gmail.com",
+      "email": "eya@example.com",
       "password": "maissen",
       "confirmPassword": "maissen",
       "usertype": "admin",
-      "id": 4
-    },
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "confirmPassword": "",
-      "usertype": "regular",
-      "id": 5
+      "shoppingList": {
+        "products": [],
+        "totalPrice": 0
+      },
+      "id": 2
     }
   ]
 }

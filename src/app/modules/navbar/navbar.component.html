@@ -1,12 +1,12 @@
 <nav class="container">
-  <h1 class="logo">Earth Store</h1>
-  <div class="links" *ngIf="!shouldHideLinks()">
-    <a [routerLink]="'/home'">home</a>
-    <a [routerLink]="'/about'">about</a>
-    <a [routerLink]="'/shop'">shop</a>
-    <a [routerLink]="'/contact'">contact</a>
-    <a [routerLink]="'/shopping-list'">cart</a>
-    <a [routerLink]="'/dashboard'">Dashboard</a>
+  <h1 class="logo">Earth Store ({{ currentUser?.usertype }})</h1>
+  <div class="links">
+    <a [routerLink]="'/home'" routerLinkActive="activeLink">home</a>
+    <a [routerLink]="'/about'" routerLinkActive="activeLink">about</a>
+    <a [routerLink]="'/shop'" routerLinkActive="activeLink">shop</a>
+    <a [routerLink]="'/contact'" routerLinkActive="activeLink">contact</a>
+    <a [routerLink]="'/shopping-list'" routerLinkActive="activeLink">cart</a>
+    <a *ngIf="currentUser?.usertype === 'admin'" [routerLink]="'/dashboard'" routerLinkActive="activeLink">Dashboard</a>
     <a (click)="onLogout()">log out</a>
   </div>
 </nav>

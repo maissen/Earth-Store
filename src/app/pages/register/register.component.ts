@@ -11,11 +11,16 @@ import { RegisterService } from 'src/app/services/register.service';
 })
 export class RegisterComponent {
   user: User = {
+    id: '',
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
-    usertype: 'regular'
+    usertype: 'regular',
+    shoppingList: {
+      products: [],
+      totalPrice: 0
+    }
   };
 
   constructor(
@@ -30,13 +35,18 @@ export class RegisterComponent {
       this.snackBar.open('All fields are required!', 'Close', { duration: 3000 });
       return;
     }
-
+  
     // Password match verification
     if (this.user.password !== this.user.confirmPassword) {
       this.snackBar.open('Passwords do not match!', 'Close', { duration: 3000 });
       return;
     }
-
+  
+    // Set a default shoppingList if not provided
+    if (!this.user.shoppingList) {
+      this.user.shoppingList = { products: [], totalPrice: 0 };
+    }
+  
     // Registration
     this.registerService.registerUser(this.user).subscribe(
       () => {
@@ -49,4 +59,5 @@ export class RegisterComponent {
       }
     );
   }
+  
 }

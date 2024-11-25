@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { SessionService } from './session.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,10 +8,13 @@ import { Router } from '@angular/router';
 export class AuthService {
   private isLoggedIn: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private sessionService: SessionService) {}
 
   logout(): void {
+    this.sessionService.clearSession();
     this.isLoggedIn = false;
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });
   }
 }

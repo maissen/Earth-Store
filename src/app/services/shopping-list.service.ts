@@ -1,60 +1,57 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
-import { ShoppingList } from '../models/shoppingList.interface';
+import { map, switchMap } from 'rxjs/operators';
+import { User } from '../models/user.interface';
 import { Product } from '../models/produuct.interface';
+import { ShoppingList } from '../models/shoppingList.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShoppingListService {
-  private apiUrl = 'http://localhost:3002/shoppingList';
+  private usersApiUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 
-  getShoppingList(): Observable<ShoppingList> {
-    return this.http.get<ShoppingList>(this.apiUrl);
+  getShoppingList(userId: string): Observable<ShoppingList> {
+    return this.http.get<User>(`${this.usersApiUrl}/${userId}`).pipe(
+      map((user: User) => user.shoppingList || { products: [], totalPrice: 0 })
+    );
   }
 
-  addProductToShoppingList(product: Product): Observable<ShoppingList> {
-    return this.http.get<ShoppingList>(this.apiUrl).pipe(
-      switchMap((shoppingList: ShoppingList) => {
-        const existingProduct = shoppingList.products.find((p: Product) => p.name === product.name);
-
-        if (existingProduct) {
-          existingProduct.quantity += 1;
-        } else {
-          product.quantity = 1;
-          shoppingList.products.push(product);
+  addProductToShoppingList(userId: string, product: Product): Observable<User> {
+    return this.http.get<User>(`${this.usersApiUrl}/${userId}`).pipe(
+      switchMap((user: User) => {
+        if (!user.shoppingList) {
+          user.shoppingList = { products: [], totalPrice: 0 };
         }
 
-        shoppingList.totalPrice = shoppingList.products.reduce(
-          (total: number, prod: Product) => total + prod.price * prod.quantity,
-          0
-        );
+        const existingProduct = user.shoppingList.products.find(p => p.name === product.name);
+        if (existingProduct) {
+          existingProduct.quantity = (existingProduct.quantity || 1) + (product.quantity || 1);
+        } else {
+          user.shoppingList.products.push({ ...product, quantity: product.quantity || 1 });
+        }
 
-        return this.http.put<ShoppingList>(this.apiUrl, shoppingList);
+        user.shoppingList.totalPrice += product.price * (product.quantity || 1);
+
+        return this.http.put<User>(`${this.usersApiUrl}/${userId}`, user);
       })
     );
   }
 
-  removeProductFromList(product: Product): Observable<ShoppingList> {
-    return this.getShoppingList().pipe(
-      switchMap((shoppingList) => {
-        shoppingList.products = shoppingList.products.filter(p => p.name !== product.name);
-        shoppingList.totalPrice = this.calculateTotalPrice(shoppingList.products);
-        
-        return this.saveShoppingList(shoppingList);
+  removeProductFromList(userId: string, product: Product): Observable<User> {
+    return this.http.get<User>(`${this.usersApiUrl}/${userId}`).pipe(
+      switchMap((user: User) => {
+        if (user.shoppingList) {
+          user.shoppingList.products = user.shoppingList.products.filter(p => p.name !== product.name);
+          user.shoppingList.totalPrice -= product.price * (product.quantity || 1);
+        }
+
+        return this.http.put<User>(`${this.usersApiUrl}/${userId}`, user);
       })
     );
-  }
-  
-  private calculateTotalPrice(products: Product[]): number {
-    return products.reduce((total, prod) => total + (prod.price * prod.quantity), 0);
-  }
-  
-  private saveShoppingList(shoppingList: ShoppingList): Observable<ShoppingList> {
-    return this.http.put<ShoppingList>(this.apiUrl, shoppingList);
   }
 }
+
