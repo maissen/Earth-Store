@@ -9,14 +9,6 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  isAuthenticated(): boolean {
-    return this.isLoggedIn;
-  }
-
-  login(): void {
-    this.isLoggedIn = true;
-  }
-
   logout(): void {
     this.isLoggedIn = false;
     this.router.navigate(['/login']);

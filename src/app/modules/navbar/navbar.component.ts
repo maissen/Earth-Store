@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -7,13 +7,12 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent implements OnInit {
-  isLoggedIn: boolean = false;
-
+export class NavbarComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.isLoggedIn = this.authService.isAuthenticated();
+  shouldHideLinks(): boolean {
+    const currentUrl = this.router.url;
+    return currentUrl.includes('/login') || currentUrl.includes('/register');
   }
 
   onLogout(): void {
