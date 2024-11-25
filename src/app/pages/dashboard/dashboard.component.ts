@@ -37,6 +37,12 @@ export class DashboardComponent {
   }
 
   saveProduct(): void {
+    // Check if any field is empty
+    if (!this.isProductFormValid()) {
+      alert('Please fill in all fields before submitting.');
+      return;
+    }
+
     if (this.isEditing) {
       const index = this.products.findIndex((p) => p.id === this.productForm.id);
       if (index !== -1) {
@@ -52,7 +58,9 @@ export class DashboardComponent {
   }
 
   deleteProduct(id: number): void {
-    this.products = this.products.filter((product) => product.id !== id);
+    if (confirm('Are you sure you want to delete this product?')) {
+      this.products = this.products.filter((product) => product.id !== id);
+    }
   }
 
   cancel(): void {
@@ -70,5 +78,16 @@ export class DashboardComponent {
       quantity: 0,
       img: ''
     };
+  }
+
+  private isProductFormValid(): boolean {
+    return (
+      this.productForm.name.trim() !== '' &&
+      this.productForm.category.trim() !== '' &&
+      this.productForm.description.trim() !== '' &&
+      this.productForm.price > 0 &&
+      this.productForm.quantity > 0 &&
+      this.productForm.img.trim() !== ''
+    );
   }
 }
