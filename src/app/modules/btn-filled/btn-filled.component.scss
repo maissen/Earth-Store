@@ -1,0 +1,16 @@
+.btn-filled {
+    padding: 1.5rem 5rem;
+    text-transform: uppercase;
+    background-color: var(--primary-green);
+    color: var(--primary-white);
+    transition: .3s;
+    cursor: pointer;
+    border: none;
+    border-radius: 0;
+    letter-spacing: .2rem;
+    font-weight: bold;
+
+    &:hover {
+        background-color: var(--dark-green);
+    }
+}

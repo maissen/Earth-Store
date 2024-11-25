@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-btn-filled',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./btn-filled.component.scss']
 })
 export class BtnFilledComponent {
-
+  @Input() text:string = "default text";
+  @Input() link:string = "";
 }
