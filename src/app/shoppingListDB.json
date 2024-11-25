@@ -3,19 +3,33 @@
     "products": [
       {
         "category": "postcard",
-        "name": "postcard 2",
-        "price": 15.49,
+        "name": "postcard 3",
+        "price": 20.75,
+        "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+        "quantity": 2
+      },
+      {
+        "category": "postcard",
+        "name": "postcard 9",
+        "price": 50.35,
         "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
         "quantity": 1
       },
       {
         "category": "postcard",
-        "name": "postcard 3",
-        "price": 20.75,
+        "name": "postcard 11",
+        "price": 60.4,
+        "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+        "quantity": 2
+      },
+      {
+        "category": "postcard",
+        "name": "postcard 10",
+        "price": 55.75,
         "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
         "quantity": 1
       }
     ],
-    "totalPrice": 36.24
+    "totalPrice": 268.4
   }
 }
