@@ -24,7 +24,6 @@ export class LoginService {
         const user = users.find((u) => u.email === email && u.password === password);
         if (user) {
           this.sessionService.setCurrentUser(user);
-          alert(user.name)
           if (user.usertype === 'regular') {
             this.router.navigate(['/home']);
           } else if (user.usertype === 'admin') {

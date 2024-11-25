@@ -8,23 +8,8 @@
       "usertype": "admin",
       "id": 1,
       "shoppingList": {
-        "products": [
-          {
-            "category": "postcard",
-            "name": "postcard 1",
-            "price": 10.99,
-            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
-            "quantity": 1
-          },
-          {
-            "category": "postcard",
-            "name": "postcard 2",
-            "price": 15.49,
-            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
-            "quantity": 3
-          }
-        ],
-        "totalPrice": 57.46
+        "products": [],
+        "totalPrice": 65
       }
     },
     {
@@ -34,23 +19,8 @@
       "confirmPassword": "maissen",
       "usertype": "admin",
       "shoppingList": {
-        "products": [
-          {
-            "category": "postcard",
-            "name": "postcard 1",
-            "price": 10.99,
-            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
-            "quantity": 1
-          },
-          {
-            "category": "postcard",
-            "name": "postcard 2",
-            "price": 15.49,
-            "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
-            "quantity": 1
-          }
-        ],
-        "totalPrice": 26.48
+        "products": [],
+        "totalPrice": 0
       },
       "id": 2
     }

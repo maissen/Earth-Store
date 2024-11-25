@@ -1,0 +1,25 @@
+.snackbar {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #323232;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    opacity: 0.9;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .snackbar.success {
+    background-color: var(--dark-green);
+  }
+  
+  .snackbar.error {
+    background-color: #f44336; 
+  }
+  

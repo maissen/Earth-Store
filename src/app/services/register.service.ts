@@ -16,13 +16,11 @@ export class RegisterService {
     return this.http.get<User[]>(`${this.apiUrl}?email=${newUser.email}`).pipe(
       map((users) => {
         if (users.length > 0) {
-          console.log('Email already exists:', users);
           throw new Error('Email already exists');
         }
         return newUser;
       }),
       switchMap((user) => {
-        console.log('Creating new user:', user);
         return this.http.post<User>(this.apiUrl, user); 
       }),
       catchError((error) => {

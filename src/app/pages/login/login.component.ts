@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 import { SessionService } from 'src/app/services/session.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
   selector: 'app-login',
@@ -16,16 +17,22 @@ export class LoginComponent {
   constructor(
     private loginService: LoginService,
     private sessionService: SessionService,
-    private router: Router
+    private router: Router,
+    private snackbarService: SnackbarService,
   ) {}
 
   onLogin(): void {
     this.loginService.login(this.email, this.password).subscribe(
       (user) => {
-        this.router.navigate(['/home']);
+        this.snackbarService.showSnackbar('Login successful! Welcome ' + user.name, 'success');
+        if (user.usertype === 'regular') {
+          this.router.navigate(['/home']);
+        } else if (user.usertype === 'admin') {
+          this.router.navigate(['/dashboard']);
+        }
       },
       (error) => {
-        this.errorMessage = error.message || 'Login failed. Please try again.';
+        this.snackbarService.showSnackbar(error.message || 'Login failed. Please try again.', 'error');
       }
     );
   }
