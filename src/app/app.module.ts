@@ -21,6 +21,7 @@ import { HomeTestimonialsComponent } from './pages/home/modules/home-testimonial
 import { HomeCallToActionComponent } from './pages/home/modules/home-call-to-action/home-call-to-action.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProductInfoComponent } from './pages/product-info/product-info.componen
     HomeTestimonialsComponent,
     HomeCallToActionComponent,
     ShopComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    ShoppingListComponent,
   ],
   imports: [
     BrowserModule,

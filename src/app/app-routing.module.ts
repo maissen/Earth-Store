@@ -7,6 +7,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
+import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'product-info', component: ProductInfoComponent},
+  {path: 'shopping-list', component: ShoppingListComponent},
   
 ];
 

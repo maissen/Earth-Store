@@ -1,0 +1,21 @@
+{
+  "shoppingList": {
+    "products": [
+      {
+        "category": "postcard",
+        "name": "postcard 1",
+        "price": 10.99,
+        "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+        "quantity": 7
+      },
+      {
+        "category": "postcard",
+        "name": "postcard 2",
+        "price": 15.49,
+        "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg",
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 92.42
+  }
+}
