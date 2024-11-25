@@ -19,6 +19,7 @@ import { HomeHeaderComponent } from './pages/home/modules/home-header/home-heade
 import { HomeNewArrivelsComponent } from './pages/home/modules/home-new-arrivels/home-new-arrivels.component';
 import { HomeTestimonialsComponent } from './pages/home/modules/home-testimonials/home-testimonials.component';
 import { HomeCallToActionComponent } from './pages/home/modules/home-call-to-action/home-call-to-action.component';
+import { ShopComponent } from './pages/shop/shop.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HomeCallToActionComponent } from './pages/home/modules/home-call-to-act
     HomeHeaderComponent,
     HomeNewArrivelsComponent,
     HomeTestimonialsComponent,
-    HomeCallToActionComponent
+    HomeCallToActionComponent,
+    ShopComponent
   ],
   imports: [
     BrowserModule,
