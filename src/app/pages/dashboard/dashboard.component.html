@@ -1,1 +1,73 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <h1 class="dashboard-title">Product Dashboard</h1>
+  
+    <!-- Table to display products -->
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Price ($)</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id }}</td>
+          <td>
+            <img [src]="product.img" alt="{{ product.name }}" class="product-img">
+          </td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="editProduct(product)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Add Product Button -->
+    <button class="btn btn-success add-product-btn" (click)="addNewProduct()">Add New Product</button>
+  
+    <!-- Product Form (Visible when adding or editing) -->
+    <div *ngIf="isFormVisible" class="product-form">
+      <h2>{{ isEditing ? 'Edit Product' : 'Add New Product' }}</h2>
+      <form (ngSubmit)="saveProduct()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" class="form-control" [(ngModel)]="productForm.name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input id="category" class="form-control" [(ngModel)]="productForm.category" name="category" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input id="description" class="form-control" [(ngModel)]="productForm.description" name="description" required>
+        </div>
+        <div class="form-group">
+          <label for="price">Price ($)</label>
+          <input id="price" type="number" class="form-control" [(ngModel)]="productForm.price" name="price" required>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input id="quantity" type="number" class="form-control" [(ngModel)]="productForm.quantity" name="quantity" required>
+        </div>
+        <div class="form-group">
+          <label for="img">Image URL</label>
+          <input id="img" class="form-control" [(ngModel)]="productForm.img" name="img" required>
+        </div>
+        <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update' : 'Add' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+      </form>
+    </div>
+  </div>
+  
