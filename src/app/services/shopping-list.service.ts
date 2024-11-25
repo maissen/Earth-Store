@@ -26,20 +26,23 @@ export class ShoppingListService {
         if (!user.shoppingList) {
           user.shoppingList = { products: [], totalPrice: 0 };
         }
-
+  
         const existingProduct = user.shoppingList.products.find(p => p.name === product.name);
         if (existingProduct) {
           existingProduct.quantity = (existingProduct.quantity || 1) + (product.quantity || 1);
         } else {
           user.shoppingList.products.push({ ...product, quantity: product.quantity || 1 });
         }
-
+  
         user.shoppingList.totalPrice += product.price * (product.quantity || 1);
-
+  
+        user.shoppingList.totalPrice = Math.round(user.shoppingList.totalPrice * 100) / 100;
+  
         return this.http.put<User>(`${this.usersApiUrl}/${userId}`, user);
       })
     );
   }
+  
 
   removeProductFromList(userId: string, product: Product): Observable<User> {
     return this.http.get<User>(`${this.usersApiUrl}/${userId}`).pipe(
