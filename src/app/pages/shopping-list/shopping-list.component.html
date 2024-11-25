@@ -1,1 +1,23 @@
-<p>shopping-list works!</p>
+<div *ngIf="shoppingList">
+    <h2>Your Shopping List</h2>
+    <div class="product-list">
+      <div *ngFor="let product of shoppingList.products" class="product-item">
+        <img [src]="product.img" alt="{{ product.name }}" class="product-img">
+        <div class="product-info">
+          <h3>{{ product.name }}</h3>
+          <p>Category: {{ product.category }}</p>
+          <p>Price: {{ product.price }}$</p>
+          <p>Quantity: {{ product.quantity }}</p>
+        </div>
+        <button (click)="removeProduct(product)">Remove</button>
+      </div>
+    </div>
+    <div class="total-amount">
+      <h3>Total Amount: {{ shoppingList.totalPrice }}$</h3>
+    </div>
+  </div>
+  
+  <div *ngIf="!shoppingList">
+    <p>No items in the shopping list.</p>
+  </div>
+  

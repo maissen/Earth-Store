@@ -38,4 +38,23 @@ export class ShoppingListService {
       })
     );
   }
+
+  removeProductFromList(product: Product): Observable<ShoppingList> {
+    return this.getShoppingList().pipe(
+      switchMap((shoppingList) => {
+        shoppingList.products = shoppingList.products.filter(p => p.name !== product.name);
+        shoppingList.totalPrice = this.calculateTotalPrice(shoppingList.products);
+        
+        return this.saveShoppingList(shoppingList);
+      })
+    );
+  }
+  
+  private calculateTotalPrice(products: Product[]): number {
+    return products.reduce((total, prod) => total + (prod.price * prod.quantity), 0);
+  }
+  
+  private saveShoppingList(shoppingList: ShoppingList): Observable<ShoppingList> {
+    return this.http.put<ShoppingList>(this.apiUrl, shoppingList);
+  }
 }
