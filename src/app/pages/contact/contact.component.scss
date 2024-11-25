@@ -1,0 +1,84 @@
+header {
+    height: 75rem;
+    width: 100%;
+    background: url("../../assets/img/home/About-banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 8rem;
+            letter-spacing: .7rem;
+            color: var(--dark-green);
+        }
+    }
+}
+
+section.form {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+
+    h1.title {
+        margin-bottom: 5rem;
+        font-size: 3.7rem;
+    }
+
+    form {
+        box-shadow: 0px 4px 51px 0px #0000000a;
+        padding: 5rem;
+
+        input,
+        textarea {
+            padding: 1.27rem;
+            font-size: 1.7rem;
+            margin-bottom: 3rem;
+        }
+
+        input { 
+            height: 5.6rem;
+        }
+        textarea { height: 15rem; min-height: 18rem;}
+    }
+
+    .items {
+        margin-left: 3rem;
+
+        .item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 3rem;
+
+            .icon {
+                margin-top: .5rem;
+                height: 4.2rem;
+                width: 4.2rem;
+                border-radius: 50%;
+                border: .1rem solid var(--dark-green);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--dark-green);
+            }
+
+            .info {
+                margin-left: 2rem;
+
+                span {
+                    color: var(--primary-gray);
+                }
+
+                p {
+                    font-size: 2.5rem;
+                    color: var(--dark-green);
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

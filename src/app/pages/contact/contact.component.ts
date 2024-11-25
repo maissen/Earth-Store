@@ -26,7 +26,7 @@ export class ContactComponent {
       (response) => {
         console.log('Contact form submitted successfully', response);
         alert('Your message has been submitted successfully!');
-        contactForm.reset(); // Reset form after success
+        contactForm.reset();
       },
       (error) => {
         console.error('Error submitting contact form', error);
