@@ -22,7 +22,7 @@ export class ProductsGridContainerComponent {
   }
 
   onAddToCart(product: any): void {
-    const currentUser = this.sessionService.getCurrentUser(); // Get the logged-in user
+    const currentUser = this.sessionService.getCurrentUser();
     if (!currentUser) {
       alert('No user is logged in.');
       return;

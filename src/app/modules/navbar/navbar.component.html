@@ -1,6 +1,6 @@
 <nav class="container">
   <h1 class="logo">Earth Store</h1>
-  <div class="links">
+  <div class="links" *ngIf="currentUser">
     <a [routerLink]="'/home'" routerLinkActive="activeLink">home</a>
     <a [routerLink]="'/about'" routerLinkActive="activeLink">about</a>
     <a [routerLink]="'/shop'" routerLinkActive="activeLink">shop</a>
