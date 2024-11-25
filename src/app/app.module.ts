@@ -22,6 +22,7 @@ import { HomeCallToActionComponent } from './pages/home/modules/home-call-to-act
 import { ShopComponent } from './pages/shop/shop.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
+import { AboutComponent } from './pages/about/about.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ShoppingListComponent } from './pages/shopping-list/shopping-list.compo
     ShopComponent,
     ProductInfoComponent,
     ShoppingListComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
