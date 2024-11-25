@@ -1,7 +1,7 @@
 <div class="dashboard-container">
+  
     <h1 class="dashboard-title">Product Dashboard</h1>
   
-    <!-- Table to display products -->
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
@@ -27,43 +27,35 @@
           <td>{{ product.price }}</td>
           <td>{{ product.quantity }}</td>
           <td>
-            <button class="btn btn-primary btn-sm" (click)="editProduct(product)">Edit</button>
-            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)">Delete</button>
+            <button class="btn btn-primary btn-sm" (click)="editProduct(product)" title="edit"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn btn-danger btn-sm" (click)="deleteProduct(product.id)" title="delete"><i class="fa-solid fa-trash"></i></button>
           </td>
         </tr>
       </tbody>
     </table>
   
-    <!-- Add Product Button -->
     <button class="btn btn-success add-product-btn" (click)="addNewProduct()">Add New Product</button>
   
-    <!-- Product Form (Visible when adding or editing) -->
     <div *ngIf="isFormVisible" class="product-form">
       <h2>{{ isEditing ? 'Edit Product' : 'Add New Product' }}</h2>
       <form (ngSubmit)="saveProduct()">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input id="name" class="form-control" [(ngModel)]="productForm.name" name="name" required>
+          <input id="name" class="form-control" [(ngModel)]="productForm.name" name="name" required placeholder="Product's name">
         </div>
         <div class="form-group">
-          <label for="category">Category</label>
-          <input id="category" class="form-control" [(ngModel)]="productForm.category" name="category" required>
+          <input id="category" class="form-control" [(ngModel)]="productForm.category" name="category" required placeholder="Category">
         </div>
         <div class="form-group">
-          <label for="description">Description</label>
-          <input id="description" class="form-control" [(ngModel)]="productForm.description" name="description" required>
+          <input id="description" class="form-control" [(ngModel)]="productForm.description" name="description" required placeholder="description">
         </div>
         <div class="form-group">
-          <label for="price">Price ($)</label>
-          <input id="price" type="number" class="form-control" [(ngModel)]="productForm.price" name="price" required>
+          <input id="price" type="number" class="form-control" [(ngModel)]="productForm.price" name="price" required placeholder="Price">
         </div>
         <div class="form-group">
-          <label for="quantity">Quantity</label>
-          <input id="quantity" type="number" class="form-control" [(ngModel)]="productForm.quantity" name="quantity" required>
+          <input id="quantity" type="number" class="form-control" [(ngModel)]="productForm.quantity" name="quantity" required placeholder="Quantity">
         </div>
         <div class="form-group">
-          <label for="img">Image URL</label>
-          <input id="img" class="form-control" [(ngModel)]="productForm.img" name="img" required>
+          <input id="img" class="form-control" [(ngModel)]="productForm.img" name="img" required placeholder="Product's img">
         </div>
         <button type="submit" class="btn btn-primary">{{ isEditing ? 'Update' : 'Add' }}</button>
         <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
