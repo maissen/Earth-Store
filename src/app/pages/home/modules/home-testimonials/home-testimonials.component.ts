@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { contactSubmission } from 'src/app/models/contactSubmission.interface';
 
 interface Testimonial {
   text: string;
@@ -10,23 +12,37 @@ interface Testimonial {
   templateUrl: './home-testimonials.component.html',
   styleUrls: ['./home-testimonials.component.scss']
 })
-export class HomeTestimonialsComponent {
-  testimonials: Testimonial[] = [
-    {
-      text: 'Lorem qui quaerat iste vitae adipisci voluptatibus quis consectetur repellat laudantium sint, quos at culpa! Quidem dignissimos perspiciatis reiciendis similique voluptate.',
-      username: 'Eya Yahyaoui'
-    },
-    {
-      text: 'Aliquam quaerat rerum nobis eaque harum praesentium dolorem ab dolores quia asperiores distinctio officia eligendi nisi voluptate, fuga id corporis esse.',
-      username: 'John Doe'
-    },
-    {
-      text: 'Sint veritatis tempore voluptatum doloremque, nisi voluptas consequuntur qui molestiae facilis tempora exercitationem cumque quas nesciunt veniam.',
-      username: 'Jane Smith'
-    }
-  ];
+export class HomeTestimonialsComponent implements OnInit {
+  testimonials: Testimonial[] = [];
+  private apiUrl = 'http://localhost:3001/submissions';
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.fetchTestimonials();
+  }
+
+  fetchTestimonials(): void {
+    this.http.get<any>(this.apiUrl).subscribe(
+      (data) => {
+        console.log('Fetched data:', data);
+        if (data && Array.isArray(data)) {
+          const formattedTestimonials = data.map((submission: contactSubmission) => ({
+            text: submission.message,
+            username: submission.fullName
+          }));
+          this.testimonials = formattedTestimonials.slice(-3);
+        } else {
+          console.error('No valid data found.');
+        }
+      },
+      (error) => {
+        console.error('Error fetching testimonials:', error);
+      }
+    );
+  }
 
   get displayedTestimonials(): Testimonial[] {
-    return this.testimonials.slice(0, 3);
+    return this.testimonials;
   }
 }

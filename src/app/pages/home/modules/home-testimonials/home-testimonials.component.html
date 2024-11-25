@@ -1,14 +1,13 @@
 <div class="container">
-    <h1 class="title">What Our Customers Say</h1>
-  
-    <div class="testimonials">
-      <div class="item" *ngFor="let testimonial of displayedTestimonials">
-        <p class="icon"><i class="fa-solid fa-quote-left"></i></p>
-        <p class="text">
-          {{ testimonial.text }}
-        </p>
-        <p class="username">{{ testimonial.username }}</p>
+  <h1 class="title">What Our Customers Say</h1>
+
+  <div class="testimonials">
+      <div class="item" *ngFor="let testimonial of testimonials">
+          <p class="icon"><i class="fa-solid fa-quote-left"></i></p>
+          <p class="text">
+              {{ testimonial.text }}
+          </p>
+          <p class="username">{{ testimonial.username }}</p>
       </div>
-    </div>
+  </div>
 </div>
-  
