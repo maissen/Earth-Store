@@ -5,7 +5,7 @@
     <a [routerLink]="'/about'" routerLinkActive="activeLink">about</a>
     <a [routerLink]="'/shop'" routerLinkActive="activeLink">shop</a>
     <a [routerLink]="'/contact'" routerLinkActive="activeLink">contact</a>
-    <a [routerLink]="'/shopping-list'" routerLinkActive="activeLink">cart</a>
+    <a [routerLink]="'/shopping-list'" routerLinkActive="activeLink"><i class="fa-solid fa-cart-shopping"></i></a>
     <a *ngIf="currentUser?.usertype === 'admin'" [routerLink]="'/dashboard'" routerLinkActive="activeLink">Dashboard</a>
     <a (click)="onLogout()">log out</a>
   </div>

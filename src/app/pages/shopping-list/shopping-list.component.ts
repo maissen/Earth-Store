@@ -3,6 +3,7 @@ import { ShoppingListService } from 'src/app/services/shopping-list.service';
 import { SessionService } from 'src/app/services/session.service';
 import { ShoppingList } from 'src/app/models/shoppingList.interface';
 import { Product } from 'src/app/models/produuct.interface';
+import { User } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-shopping-list',
@@ -11,6 +12,7 @@ import { Product } from 'src/app/models/produuct.interface';
 })
 export class ShoppingListComponent implements OnInit {
   shoppingList: ShoppingList | null | undefined = null;
+  currentUser: User | null = null;
 
   constructor(
     private shoppingListService: ShoppingListService,
@@ -18,17 +20,25 @@ export class ShoppingListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.loadCurrentUser();
+  }
+
+  loadCurrentUser(): void {
+    this.currentUser = this.sessionService.getCurrentUser();
+    if (!this.currentUser) {
+      console.error('No user is logged in.');
+      return;
+    }
     this.loadShoppingList();
   }
 
   loadShoppingList(): void {
-    const currentUser = this.sessionService.getCurrentUser();
-    if (!currentUser) {
+    if (!this.currentUser) {
       console.error('No user is logged in.');
       return;
     }
 
-    this.shoppingListService.getShoppingList(currentUser.id).subscribe(
+    this.shoppingListService.getShoppingList(this.currentUser.id).subscribe(
       (data: ShoppingList) => {
         this.shoppingList = data;
       },
@@ -39,13 +49,12 @@ export class ShoppingListComponent implements OnInit {
   }
 
   removeProduct(product: Product): void {
-    const currentUser = this.sessionService.getCurrentUser();
-    if (!currentUser) {
+    if (!this.currentUser) {
       console.error('No user is logged in.');
       return;
     }
 
-    this.shoppingListService.removeProductFromList(currentUser.id, product).subscribe(
+    this.shoppingListService.removeProductFromList(this.currentUser.id, product).subscribe(
       (user) => {
         this.shoppingList = user.shoppingList;
       },
