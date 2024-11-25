@@ -1,0 +1,91 @@
+header {
+    height: 75rem;
+    width: 100%;
+    background: url("../../assets/img/home/About-banner.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 8rem;
+            letter-spacing: .7rem;
+            color: var(--dark-green);
+        }
+    }
+}
+
+section.story {
+    padding-top: 16rem;
+    padding-bottom: 16rem;
+
+    .row {
+
+        .thumb {
+            width: 55rem;
+            max-width: 55rem;
+            height: 40.9rem;
+            background: url("../../assets/img/home/mission.jpg") no-repeat;
+            background-position: center;
+            background-size: cover;
+            margin: auto;
+        }
+
+        .text {
+            height: 40.9rem;
+            display: flex;
+            align-items: center;
+            align-items: center;
+
+            div {
+                @media all and (min-width: 992px) {
+                    margin-left: 5rem;
+                }
+
+                h1 {
+                    font-size: 3.6rem;
+                    text-transform: uppercase;
+                    margin-bottom: 2rem;
+                }
+
+                p {
+                    line-height: 2.9rem;
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}
+
+
+section.banner {
+    height: 38rem;
+    background: url("../../assets/img/home/talktous.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        text-align: center;
+
+        h1 {
+            text-transform: uppercase;
+            font-size: 4.1rem;
+            letter-spacing: .7rem;
+            margin-bottom: 3rem;
+            color: var(--primary-black);
+        }
+    
+        p {
+            font-size: 1.7rem;
+            margin-bottom: 3rem;
+        }
+    }
+}
