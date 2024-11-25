@@ -20,6 +20,7 @@ import { HomeNewArrivelsComponent } from './pages/home/modules/home-new-arrivels
 import { HomeTestimonialsComponent } from './pages/home/modules/home-testimonials/home-testimonials.component';
 import { HomeCallToActionComponent } from './pages/home/modules/home-call-to-action/home-call-to-action.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ShopComponent } from './pages/shop/shop.component';
     HomeNewArrivelsComponent,
     HomeTestimonialsComponent,
     HomeCallToActionComponent,
-    ShopComponent
+    ShopComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,
