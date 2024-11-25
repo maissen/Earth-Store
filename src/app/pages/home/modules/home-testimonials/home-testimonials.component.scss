@@ -1,0 +1,40 @@
+.container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+
+    h1.title {
+        color: var(--secondary-green);
+        font-size: 4.1rem;
+        margin-bottom: 3rem;
+    }
+
+    .testimonials {
+        display: flex;
+        gap: 3rem;
+
+        .item {
+
+            .icon {
+                font-size: 3.4rem;
+                font-weight: bold;
+                color: var(--primary-gray);
+            }
+    
+            .username {
+                color: var(--secondary-green);
+                font-weight: bold;
+            }
+        }
+
+
+        @media all and (max-width: 992px) {
+            overflow-x: auto;
+            padding-bottom: 2rem;
+
+            .item {
+                width: 30rem;
+                min-width: 30rem;
+            }
+        }
+    }
+}

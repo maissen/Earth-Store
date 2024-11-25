@@ -1,0 +1,21 @@
+<div class="grid-container">
+    <div *ngFor="let product of products;" class="product">
+
+        <div class="thumb">
+            <img [src]="product.img" alt="product.name">
+        </div>
+        
+        <div class="body">
+            <div class="name-price">
+                <span class="name">{{product.name}}</span>
+                <span class="price">{{product.price}}$</span>
+            </div>
+            <p class="category">{{product.category}}</p>
+        </div>
+
+        <button type="button" class="btn add-to-cart" title="Add to Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </button>
+    
+    </div>
+</div>

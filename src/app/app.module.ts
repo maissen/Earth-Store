@@ -11,6 +11,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { NavbarComponent } from './modules/navbar/navbar.component';
+import { FooterComponent } from './modules/footer/footer.component';
+import { BtnFilledComponent } from './modules/btn-filled/btn-filled.component';
+import { ProductsGridContainerComponent } from './modules/products-grid-container/products-grid-container.component';
+import { HomeHeaderComponent } from './pages/home/modules/home-header/home-header.component';
+import { HomeNewArrivelsComponent } from './pages/home/modules/home-new-arrivels/home-new-arrivels.component';
+import { HomeTestimonialsComponent } from './pages/home/modules/home-testimonials/home-testimonials.component';
+import { HomeCallToActionComponent } from './pages/home/modules/home-call-to-action/home-call-to-action.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +27,15 @@ import { ContactComponent } from './pages/contact/contact.component';
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ContactComponent
+    ContactComponent,
+    NavbarComponent,
+    FooterComponent,
+    BtnFilledComponent,
+    ProductsGridContainerComponent,
+    HomeHeaderComponent,
+    HomeNewArrivelsComponent,
+    HomeTestimonialsComponent,
+    HomeCallToActionComponent
   ],
   imports: [
     BrowserModule,
