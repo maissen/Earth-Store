@@ -23,6 +23,8 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { ShoppingListComponent } from './pages/shopping-list/shopping-list.component';
 import { AboutComponent } from './pages/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { AboutComponent } from './pages/about/about.component';
     AppRoutingModule,
     RouterLink,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from '../../models/user.interface';
 import { RegisterService } from 'src/app/services/register.service';
 
@@ -17,21 +18,33 @@ export class RegisterComponent {
     usertype: 'regular'
   };
 
-  constructor(private registerService: RegisterService, private router: Router) {}
+  constructor(
+    private registerService: RegisterService,
+    private router: Router,
+    private snackBar: MatSnackBar
+  ) {}
 
   onRegister() {
-    if (this.user.password !== this.user.confirmPassword) {
-      alert('Passwords do not match!');
+    // Field verification
+    if (!this.user.name || !this.user.email || !this.user.password || !this.user.confirmPassword) {
+      this.snackBar.open('All fields are required!', 'Close', { duration: 3000 });
       return;
     }
 
+    // Password match verification
+    if (this.user.password !== this.user.confirmPassword) {
+      this.snackBar.open('Passwords do not match!', 'Close', { duration: 3000 });
+      return;
+    }
+
+    // Registration
     this.registerService.registerUser(this.user).subscribe(
       () => {
-        alert('User registered successfully!');
+        this.snackBar.open('User registered successfully!', 'Close', { duration: 3000 });
         this.router.navigate(['/home']);
       },
       (error) => {
-        alert('Registration failed. The email might already be registered.');
+        this.snackBar.open('Registration failed: Email might already be registered.', 'Close', { duration: 3000 });
         console.error(error);
       }
     );
