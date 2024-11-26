@@ -27,15 +27,16 @@ export class ShoppingListService {
           user.shoppingList = { products: [], totalPrice: 0 };
         }
   
+        // Check if the product already exists in the shopping list by comparing product IDs or names
         const existingProduct = user.shoppingList.products.find(p => p.name === product.name);
         if (existingProduct) {
-          existingProduct.quantity = (existingProduct.quantity || 1) + (product.quantity || 1);
-        } else {
-          user.shoppingList.products.push({ ...product, quantity: product.quantity || 1 });
+          // Optionally, handle updating quantity or price here
+          return this.updateProductInShoppingList(user, existingProduct, product);
         }
   
-        user.shoppingList.totalPrice += product.price * (product.quantity || 1);
-  
+        // Add new product if it doesn't exist
+        user.shoppingList.products.push(product);
+        user.shoppingList.totalPrice += product.price;
         user.shoppingList.totalPrice = Math.round(user.shoppingList.totalPrice * 100) / 100;
   
         return this.http.put<User>(`${this.usersApiUrl}/${userId}`, user);
@@ -43,13 +44,22 @@ export class ShoppingListService {
     );
   }
   
+  private updateProductInShoppingList(user: User, existingProduct: Product, product: Product): Observable<User> {
+    // Logic to update existing product (e.g., increment quantity)
+    user.shoppingList.totalPrice += product.price;
+    user.shoppingList.totalPrice = Math.round(user.shoppingList.totalPrice * 100) / 100;
+  
+    return this.http.put<User>(`${this.usersApiUrl}/${user.id}`, user);
+  }
+  
+  
 
   removeProductFromList(userId: string, product: Product): Observable<User> {
     return this.http.get<User>(`${this.usersApiUrl}/${userId}`).pipe(
       switchMap((user: User) => {
         if (user.shoppingList) {
           user.shoppingList.products = user.shoppingList.products.filter(p => p.name !== product.name);
-          user.shoppingList.totalPrice -= product.price * (product.quantity || 1);
+          user.shoppingList.totalPrice -= product.price;
         }
 
         return this.http.put<User>(`${this.usersApiUrl}/${userId}`, user);

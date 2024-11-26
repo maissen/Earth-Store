@@ -1,28 +1,4 @@
 {
   "users": [
-    {
-      "name": "maissen",
-      "email": "maissen@gmail.com",
-      "password": "maissenmaissen",
-      "confirmPassword": "maissenmaissen",
-      "usertype": "admin",
-      "id": 1,
-      "shoppingList": {
-        "products": [],
-        "totalPrice": 65
-      }
-    },
-    {
-      "name": "eya",
-      "email": "eya@example.com",
-      "password": "maissen",
-      "confirmPassword": "maissen",
-      "usertype": "admin",
-      "shoppingList": {
-        "products": [],
-        "totalPrice": 0
-      },
-      "id": 2
-    }
   ]
 }

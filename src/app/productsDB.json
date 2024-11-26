@@ -3,101 +3,91 @@
     {
       "id": 1,
       "category": "postcard",
-      "name": "Postcard 1",
+      "name": "Sunset Serenity Postcard",
       "description": "A beautiful postcard featuring a serene sunset over a calm lake.",
       "price": 11,
-      "quantity": 50,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard1-1000x1000.jpg"
     },
     {
       "id": 2,
       "category": "postcard",
-      "name": "Postcard 2",
+      "name": "Cityscape at Dusk Postcard",
       "description": "A vibrant postcard with a colorful city skyline at dusk.",
       "price": 15,
-      "quantity": 60,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/PostcardV2-min-1000x1000.jpg"
     },
     {
       "id": 3,
       "category": "postcard",
-      "name": "Postcard 3",
+      "name": "Mountain Village Postcard",
       "description": "A postcard showcasing a charming village nestled in the mountains.",
       "price": 21,
-      "quantity": 55,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/11/Postcard3-1000x1000.jpg"
     },
     {
       "id": 4,
       "category": "postcard",
-      "name": "Postcard 4",
+      "name": "Quaint Town Sketch Postcard",
       "description": "An artistic postcard with a hand-drawn illustration of a quaint town.",
       "price": 25,
-      "quantity": 70,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Postcard-6-min-1000x1000.jpg"
     },
     {
       "id": 5,
       "category": "postcard",
-      "name": "Postcard 5",
+      "name": "Forest Trail Escape Postcard",
       "description": "A minimalistic postcard depicting a peaceful forest trail.",
       "price": 30,
-      "quantity": 65,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/PostcardV5-min-1000x1000.jpg"
     },
     {
       "id": 6,
       "category": "postcard",
-      "name": "Postcard 6",
+      "name": "Vintage Car Beach Postcard",
       "description": "A retro-style postcard of a vintage car parked by the beach.",
       "price": 36,
-      "quantity": 75,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2021/08/PostcardV6-1000x1000.jpg"
     },
     {
       "id": 7,
       "category": "postcard",
-      "name": "Postcard 7",
+      "name": "Snowy Mountain Panorama Postcard",
       "description": "A detailed postcard with a panoramic view of a snowy mountain range.",
       "price": 41,
-      "quantity": 80,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster5-1000x1000.jpg"
     },
     {
       "id": 8,
       "category": "postcard",
-      "name": "Postcard 8",
+      "name": "Modern Cityscape at Night Postcard",
       "description": "A stylish postcard showcasing a modern cityscape at night.",
       "price": 46,
-      "quantity": 90,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster6-1000x1000.jpg"
     },
     {
       "id": 9,
       "category": "postcard",
-      "name": "Postcard 9",
+      "name": "Waterfall Wonder Postcard",
       "description": "A postcard featuring a stunning waterfall surrounded by lush greenery.",
       "price": 51,
-      "quantity": 100,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster4-1000x1000.jpg"
     },
     {
       "id": 10,
       "category": "postcard",
-      "name": "Postcard 10",
+      "name": "Pastel Sunset Beach Postcard",
       "description": "A calming postcard with a pastel-colored sunset over a tranquil beach.",
       "price": 56,
-      "quantity": 85,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster2-1000x1000.jpg"
     },
     {
       "id": 11,
       "category": "postcard",
-      "name": "Postcard 11",
+      "name": "Lighthouse Storm Postcard",
       "description": "A picturesque postcard of a lighthouse standing against stormy waves.",
       "price": 60,
-      "quantity": 60,
-      "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster3-1000x1000.jpg"
+      "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster3-1000x1000.jpg",
+      "quantity": 34
     }
   ]
 }

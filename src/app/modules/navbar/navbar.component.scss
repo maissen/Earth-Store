@@ -1,14 +1,23 @@
-nav.container {
-    height: 9rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: #FFF;
+    z-index: 100;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 9rem;
+    }
 
     .links {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 2rem;
+        gap: 3rem;
 
         a {
             color: #000;
@@ -25,4 +34,8 @@ nav.container {
 .activeLink {
   color: var(--primary-green) !important;
   font-weight: bold;
+}
+
+.scrolled {
+  box-shadow: #959da533 0px 8px 24px;
 }
