@@ -39,10 +39,10 @@ export class ProductsGridContainerComponent implements OnInit {
   }
 
   filteredProducts() {
-    console.log('Filtering products with:', this.filterText, this.minPrice, this.maxPrice);  // Debug log
+    console.log('Filtering products with:', this.filterText, this.minPrice, this.maxPrice);
   
     if (!this.hasFilter) {
-      return this.products;  // Return all products if no filter is applied
+      return this.products;
     }
   
     return this.products.filter(product => {
