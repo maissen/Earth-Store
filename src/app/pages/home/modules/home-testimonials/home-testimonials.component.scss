@@ -12,7 +12,14 @@
         display: flex;
         gap: 3rem;
 
+        justify-content: space-between;
+
         .item {
+            width: 30%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             .icon {
                 font-size: 3.4rem;
@@ -25,7 +32,6 @@
                 font-weight: bold;
             }
         }
-
 
         @media all and (max-width: 992px) {
             overflow-x: auto;

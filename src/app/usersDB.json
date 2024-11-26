@@ -1,4 +1,37 @@
 {
   "users": [
+    {
+      "id": 2,
+      "name": "maissen",
+      "email": "maissen@gmail.com",
+      "password": "maissen",
+      "confirmPassword": "maissen",
+      "usertype": "admin",
+      "shoppingList": {
+        "products": [
+          {
+            "id": 12,
+            "category": "weddings",
+            "name": "Wedding card",
+            "description": "something",
+            "price": 52,
+            "img": "https://thumbs.dreamstime.com/z/colorful-floral-wedding-invitation-card-design-colorful-floral-wedding-invitation-card-design-162786792.jpg"
+          }
+        ],
+        "totalPrice": 52
+      }
+    },
+    {
+      "id": 3,
+      "name": "Khaled",
+      "email": "Khaled@gmail.com",
+      "password": "maissen",
+      "confirmPassword": "maissen",
+      "usertype": "regular",
+      "shoppingList": {
+        "products": [],
+        "totalPrice": 0
+      }
+    }
   ]
 }

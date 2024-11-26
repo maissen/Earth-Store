@@ -85,9 +85,17 @@
       "category": "postcard",
       "name": "Lighthouse Storm Postcard",
       "description": "A picturesque postcard of a lighthouse standing against stormy waves.",
-      "price": 60,
+      "price": 70,
       "img": "https://websitedemos.net/earth-store-02/wp-content/uploads/sites/1171/2022/10/Poster3-1000x1000.jpg",
       "quantity": 34
+    },
+    {
+      "id": 12,
+      "category": "weddings",
+      "name": "Wedding card",
+      "description": "something",
+      "price": 52,
+      "img": "https://thumbs.dreamstime.com/z/colorful-floral-wedding-invitation-card-design-colorful-floral-wedding-invitation-card-design-162786792.jpg"
     }
   ]
 }

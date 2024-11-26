@@ -22,6 +22,7 @@
               #fullNameInput="ngModel"
               placeholder="Full Name"
               autocomplete="off"
+              required
             />
           </div>
         
@@ -35,6 +36,9 @@
               #emailInput="ngModel"
               placeholder="Email"
               autocomplete="off"
+              value="{{currentUser?.email}}"
+              disabled="true"
+              required
             />
           </div>
         
@@ -47,9 +51,9 @@
               #messageInput="ngModel"
               placeholder="Enter your message ..."
               autocomplete="off"
+              required=""
               ></textarea>
           </div>
-        
           <app-btn-filled [text]="'Submit Feedback'" [link]="'/contact'" ></app-btn-filled>
         </form>
       

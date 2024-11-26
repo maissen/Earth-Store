@@ -19,14 +19,13 @@ export class DashboardComponent {
     this.fetchProducts();
   }
 
-  // Fetch products from the server
   fetchProducts(): void {
     this.http.get<Product[]>(this.apiUrl).subscribe((data) => {
       this.products = data;
+      this.showSnackbar('Products loaded successfully.');
     });
   }
 
-  // Show the form to add a new product
   addNewProduct(): void {
     this.isEditing = false;
     this.productForm = this.resetProductForm();
@@ -34,7 +33,6 @@ export class DashboardComponent {
     this.showSnackbar('Ready to add a new product.');
   }
 
-  // Show the form to edit an existing product
   editProduct(product: Product): void {
     this.isEditing = true;
     this.productForm = { ...product };
@@ -42,30 +40,27 @@ export class DashboardComponent {
     this.showSnackbar('You are editing a product.');
   }
 
-  // Save the product (add or update)
   saveProduct(): void {
     if (!this.isProductFormValid()) {
-      alert('Please fill in all fields before submitting.');
+      this.showSnackbar('Please fill in all fields before submitting.');
       return;
     }
 
     const productToSave = { ...this.productForm };
 
     if (this.isEditing) {
-      // Update existing product
       this.http.put(`${this.apiUrl}/${this.productForm.id}`, productToSave)
         .subscribe(() => {
           const index = this.products.findIndex((p) => p.id === this.productForm.id);
           if (index !== -1) {
-            this.products[index] = { ...this.productForm };  // Update the local list
+            this.products[index] = { ...this.productForm };
           }
           this.showSnackbar('Product updated successfully.');
         });
     } else {
-      // Add new product and expect a Product response
-      this.http.post<Product>(this.apiUrl, productToSave)  // Specify Product as the response type
+      this.http.post<Product>(this.apiUrl, productToSave)
         .subscribe((newProduct: Product) => {
-          this.products.push(newProduct);  // Add to local list after server update
+          this.products.push(newProduct);
           this.showSnackbar('New product added successfully.');
         });
     }
@@ -74,7 +69,6 @@ export class DashboardComponent {
     this.productForm = this.resetProductForm();
   }
 
-  // Delete a product
   deleteProduct(id: number): void {
     if (confirm('Are you sure you want to delete this product?')) {
       this.http.delete(`${this.apiUrl}/${id}`)
@@ -85,14 +79,12 @@ export class DashboardComponent {
     }
   }
 
-  // Cancel the current action (add or edit)
   cancel(): void {
     this.isFormVisible = false;
     this.productForm = this.resetProductForm();
     this.showSnackbar('Action canceled.');
   }
 
-  // Reset the product form
   private resetProductForm(): Product {
     return {
       id: 0,
@@ -104,7 +96,6 @@ export class DashboardComponent {
     };
   }
 
-  // Validate the product form fields
   private isProductFormValid(): boolean {
     return (
       this.productForm.name.trim() !== '' &&
@@ -115,10 +106,9 @@ export class DashboardComponent {
     );
   }
 
-  // Show a snackbar with a message
   private showSnackbar(message: string): void {
     this.snackBar.open(message, 'Close', {
-      duration: 3000, // Duration of the snackbar in milliseconds
+      duration: 3000,
     });
   }
 }
